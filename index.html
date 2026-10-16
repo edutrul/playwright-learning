@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello world</title>
+    <style>
+      body {
+        margin: 0;
+        background: #f4f2ff;
+        color: #28243a;
+        font-family: system-ui, sans-serif;
+      }
+
+      main {
+        box-sizing: border-box;
+        max-width: 42rem;
+        margin: 3rem auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 1rem;
+      }
+
+      button {
+        min-height: 2.75rem;
+        padding: 0.5rem 1rem;
+        font: inherit;
+      }
+
+      @media (max-width: 600px) {
+        main {
+          margin: 0;
+          padding: 1.25rem;
+          border-radius: 0;
+        }
+
+        h1 {
+          font-size: clamp(2rem, 9vw, 3rem);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Hello world!</h1>
+      <p>This tiny page is here for us to explore with Playwright.</p>
+
+      <ul>
+        <li>Playwright can open a page.</li>
+        <li>It can find links and buttons.</li>
+        <li>It can check what happens after a click.</li>
+      </ul>
+
+      <button type="button" id="tip-button">Show me a tip</button>
+      <p id="tip" hidden>Playwright checks what the browser shows you.</p>
+
+      <a href="#about">Read the little note</a>
+
+      <section id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">A little note</h2>
+        <p>You clicked the link. Playwright can record that interaction.</p>
+      </section>
+    </main>
+    <script>
+      document.querySelector('#tip-button').addEventListener('click', () => {
+        document.querySelector('#tip').hidden = false;
+      });
+    </script>
+  </body>
+</html>
